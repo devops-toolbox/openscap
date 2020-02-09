@@ -8,10 +8,10 @@ openscap: Openscap
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.openscap](https://galaxy.ansible.com/devops-toolbox.openscap)
+[https://galaxy.ansible.com/devopstoolbox.openscap](https://galaxy.ansible.com/devopstoolbox.openscap)
 
 ```bash
-ansible-galaxy install devops-toolbox.openscap
+ansible-galaxy install devopstoolbox.openscap
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: openscap is configured
       import_role:
-        name: devops-toolbox.openscap
+        name: devopstoolbox.openscap
       vars:
         openscap_packages_state: present
         openscap_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
