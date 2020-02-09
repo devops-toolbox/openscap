@@ -1,0 +1,27 @@
+---
+# Install openscap packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ openscap_packages_remove }}"
+    state: absent
+  become: true
+  when: openscap_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ openscap_packages_repos }}"
+    state: "{{ openscap_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ openscap_packages_prereq }}"
+    state: "{{ openscap_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ openscap_packages_install }}"
+    state: "{{ openscap_packages_state }}"
+  become: true

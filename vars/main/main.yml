@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+openscap_repos_create: "{{ _openscap_repos_create['all']
+  | union ( _openscap_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+openscap_repos_download: "{{ _openscap_repos_download['all']
+  | union ( _openscap_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+openscap_templates_copy: "{{ _openscap_templates_copy['all']
+  | union ( _openscap_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+openscap_services_enable: "{{ _openscap_services_enable['all']
+  | union ( _openscap_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+openscap_selinux_enable: "{{ _openscap_selinux_enable['all']
+  | union ( _openscap_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+openscap_packages_remove: "{{ _openscap_packages_remove['all']
+  | union ( _openscap_packages_remove[my_os]
+  | default([]) ) }}"
+openscap_packages_repos: "{{ _openscap_packages_repos['all']
+  | union ( _openscap_packages_repos[my_os]
+  | default([]) ) }}"
+openscap_packages_prereq: "{{ _openscap_packages_prereq['all']
+  | union ( _openscap_packages_prereq[my_os]
+  | default([]) ) }}"
+openscap_packages_install: "{{ _openscap_packages_install['all']
+  | union ( _openscap_packages_install[my_os]
+  | default([]) ) }}"
